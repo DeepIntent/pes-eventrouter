@@ -1,0 +1,39 @@
+pipeline:
+  image: platform/go:1.15
+  stages:
+    "Build Binary":
+      cache:
+        - path: /gopath
+      env:
+        GOPATH: /gopath
+        CGO_ENABLED: 0
+        GOOS: linux
+      steps:
+        - |
+          go mod download
+          go build
+    
+    "Lint chart":
+      helm:
+        chartPath: charts/eventrouter
+        lint: true
+
+    "Build Docker Image":
+      imageBuild: &imageBuild
+        push: false
+        name: eventrouter
+        tags:
+          - 0.3.0.pes1.0-1
+    
+    "Deploy Docker Image":
+      branch: master
+      imageBuild:
+        <<: *imageBuild
+        push: true
+        
+    "Deploy chart":
+      branch: master
+      helm:
+        chartPath: charts/eventrouter
+        lint: true
+        deploy: true

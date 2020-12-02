@@ -1,4 +1,4 @@
 {
-"kubeconfig": "/home/m/dev/pes/gh/startup/deployments/central.dev.didevops.com/kube_config_cluster.yml",
-"sink": "glog"
+"kubeconfig": "",
+"sink": "stdout"
 }
