@@ -69,16 +69,14 @@ spec:
         app: eventrouter
         tier: control-plane-addons
     spec:
-      imagePullSecrets:
-        - name: platform-registry
       containers:
         - name: kube-eventrouter
-          image: harbor.central.dev.didevops.com/platform/eventrouter:0.3.0.pes1
+          image: gcr.io/heptio-images/eventrouter:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
           - name: config-volume
             mountPath: /etc/eventrouter
-      serviceAccountName: eventrouter
+      serviceAccount: eventrouter
       volumes:
         - name: config-volume
           configMap:
