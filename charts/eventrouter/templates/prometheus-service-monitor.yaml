@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "eventrouter.fullname" . }}
+  labels:
+    {{- include "eventrouter.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "eventrouter.selectorLabels" . | nindent 4 }}
+  namespaceSelector:
+    matchNames:
+      - {{ $.Release.Namespace | quote }}
+  endpoints:
+  - port: http-metrics
+    interval: 15s

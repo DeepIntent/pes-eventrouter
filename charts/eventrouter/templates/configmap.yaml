@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  config.json:{{ .Values.config | toYaml | indent 1 }}
+
+kind: ConfigMap
+metadata:
+  name: eventrouter-cm
