@@ -1,10 +1,5 @@
 replicaCount: 1
 
-config: |-
-  {
-  "sink": "stdout"
-  }
-
 image:
   repository: doc.propelmedia.com/platform/eventrouter
   pullPolicy: IfNotPresent
@@ -34,7 +29,7 @@ securityContext:
   # capabilities:
   #   drop:
   #   - ALL
-   readOnlyRootFilesystem: true
+#   readOnlyRootFilesystem: true
    runAsNonRoot: true
    runAsUser: 1000
 

@@ -1,0 +1,5 @@
+image:
+  repository: harbor.central.dev.didevops.com/platform/eventrouter
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: 0.3.0.pes1.0-2
