@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "eventrouter.fullname" . }}
   labels:
-    {{- include "eventrouter.labels" . | nindent 4 }}
+    {{- include "eventrouter.selectorLabels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:

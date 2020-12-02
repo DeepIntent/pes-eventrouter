@@ -2,6 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: {{ include "eventrouter.fullname" . }}
+  namespace: {{ .Values.monitoringNamespace }}
   labels:
     {{- include "eventrouter.labels" . | nindent 4 }}
 spec:

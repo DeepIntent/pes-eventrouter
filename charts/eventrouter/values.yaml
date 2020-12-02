@@ -48,3 +48,6 @@ tolerations:
     key: platform-node
     
 affinity: {}
+
+
+monitoringNamespace: platform
