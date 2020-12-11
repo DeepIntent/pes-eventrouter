@@ -21,7 +21,7 @@ pipeline:
     "Build Docker Image":
       imageBuild: &imageBuild
         push: false
-        name: eventrouter
+        name: platform/eventrouter
         tags:
           - 0.3.0.pes1.0
     
