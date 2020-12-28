@@ -1,5 +1,5 @@
 apiVersion: v2
 name: eventrouter
 description: Event-router streams k8s events to target sinks.
-version: 0.1.2
+version: 0.1.3
 appVersion: 0.3.0.pes1.0
