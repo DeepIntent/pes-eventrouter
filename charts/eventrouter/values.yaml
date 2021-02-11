@@ -43,6 +43,7 @@ nodeSelector:
 tolerations:
   - effect: NoSchedule
     key: platform-node
+    operator: Exists
     
 affinity: {}
 
