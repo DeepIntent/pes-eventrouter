@@ -23,22 +23,13 @@ pipeline:
         push: false
         name: platform/eventrouter
         tags:
-          - 0.3.0.pes1.0
+          - 0.3.0.pes2.0
     
     "Deploy Docker Image":
       branch: master
       imageBuild:
         <<: *imageBuild
         push: true
-
-    "Deploy Dev Docker Image ":
-      branch: eventrouter-image-upgrade
-      imageBuild:
-        <<: *imageBuild
-        push: true
-        tags:
-          - 0.3.0.pes2.2-0
-
         
     "Deploy chart":
       branch: master
