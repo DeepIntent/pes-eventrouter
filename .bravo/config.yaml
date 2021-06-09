@@ -31,7 +31,7 @@ pipeline:
         <<: *imageBuild
         push: true
 
-    "Deploy Dev Docker Image":
+    "Deploy Dev Docker Image ":
       branch: eventrouter-image-upgrade
       imageBuild:
         <<: *imageBuild
