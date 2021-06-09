@@ -4,7 +4,7 @@ image:
   repository: doc.propelmedia.com/platform/eventrouter
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 0.3.0.pes1.0
+  tag: 0.3.0.pes2.2-0
 
 imagePullSecrets:
   - name: platform-registry

@@ -30,6 +30,15 @@ pipeline:
       imageBuild:
         <<: *imageBuild
         push: true
+
+    "Deploy Dev Docker Image":
+      branch: eventrouter-image-upgrade
+      imageBuild:
+        <<: *imageBuild
+        push: true
+        tags:
+          - 0.3.0.pes2.2-0
+
         
     "Deploy chart":
       branch: master
