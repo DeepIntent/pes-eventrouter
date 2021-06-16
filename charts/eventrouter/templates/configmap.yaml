@@ -1,9 +1,0 @@
-apiVersion: v1
-data:
-  config.json: |-
-    {
-      "sink": "stdout"
-    }
-kind: ConfigMap
-metadata:
-  name: eventrouter-cm
