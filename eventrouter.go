@@ -38,7 +38,6 @@ var (
 		Help: "Total number of warning events in the kubernetes cluster",
 	}, []string{
 		"involved_object_kind",
-		"involved_object_name",
 		"involved_object_namespace",
 		"reason",
 		"source",
@@ -48,7 +47,6 @@ var (
 		Help: "Total number of normal events in the kubernetes cluster",
 	}, []string{
 		"involved_object_kind",
-		"involved_object_name",
 		"involved_object_namespace",
 		"reason",
 		"source",
@@ -58,7 +56,6 @@ var (
 		Help: "Total number of info events in the kubernetes cluster",
 	}, []string{
 		"involved_object_kind",
-		"involved_object_name",
 		"involved_object_namespace",
 		"reason",
 		"source",
@@ -68,7 +65,6 @@ var (
 		Help: "Total number of events of unknown type in the kubernetes cluster",
 	}, []string{
 		"involved_object_kind",
-		"involved_object_name",
 		"involved_object_namespace",
 		"reason",
 		"source",
