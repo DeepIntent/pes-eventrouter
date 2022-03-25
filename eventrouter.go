@@ -153,7 +153,6 @@ func prometheusEvent(event *v1.Event) {
 	case "Normal":
 		counter, err = kubernetesNormalEventCounterVec.GetMetricWithLabelValues(
 			event.InvolvedObject.Kind,
-			event.InvolvedObject.Name,
 			event.InvolvedObject.Namespace,
 			event.Reason,
 			event.Source.Host,
@@ -161,7 +160,6 @@ func prometheusEvent(event *v1.Event) {
 	case "Warning":
 		counter, err = kubernetesWarningEventCounterVec.GetMetricWithLabelValues(
 			event.InvolvedObject.Kind,
-			event.InvolvedObject.Name,
 			event.InvolvedObject.Namespace,
 			event.Reason,
 			event.Source.Host,
@@ -169,7 +167,6 @@ func prometheusEvent(event *v1.Event) {
 	case "Info":
 		counter, err = kubernetesInfoEventCounterVec.GetMetricWithLabelValues(
 			event.InvolvedObject.Kind,
-			event.InvolvedObject.Name,
 			event.InvolvedObject.Namespace,
 			event.Reason,
 			event.Source.Host,
@@ -177,7 +174,6 @@ func prometheusEvent(event *v1.Event) {
 	default:
 		counter, err = kubernetesUnknownEventCounterVec.GetMetricWithLabelValues(
 			event.InvolvedObject.Kind,
-			event.InvolvedObject.Name,
 			event.InvolvedObject.Namespace,
 			event.Reason,
 			event.Source.Host,

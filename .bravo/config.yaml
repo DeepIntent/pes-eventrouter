@@ -18,7 +18,7 @@ pipeline:
         push: true
         name: platform/eventrouter
         tags:
-          - 0.3.0.pes4test100
+          - 0.3.0.pes4test101
     
     "Deploy Docker Image":
       branch: master
