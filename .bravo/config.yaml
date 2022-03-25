@@ -15,10 +15,10 @@ pipeline:
 
     "Build Docker Image":
       imageBuild: &imageBuild
-        push: false
+        push: true
         name: platform/eventrouter
         tags:
-          - 0.3.0.pes3
+          - 0.3.0.pes4test100
     
     "Deploy Docker Image":
       branch: master
