@@ -7,6 +7,7 @@ require (
 	github.com/aws/aws-sdk-go v1.23.2
 	github.com/crewjam/rfc5424 v0.0.0-20180723152949-c25bdd3a0ba2
 	github.com/eapache/channels v1.1.0
+	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/imdario/mergo v0.3.7 // indirect
 	github.com/influxdata/influxdb v1.7.7
@@ -18,7 +19,7 @@ require (
 	github.com/sethgrid/pester v0.0.0-20190127155807-68a33a018ad0
 	github.com/spf13/viper v1.4.0
 	gopkg.in/jcmturner/goidentity.v3 v3.0.0 // indirect
-	k8s.io/api v0.19.4
-	k8s.io/apimachinery v0.19.4
-	k8s.io/client-go v0.19.4
+	k8s.io/api v0.21.11
+	k8s.io/apimachinery v0.21.11
+	k8s.io/client-go v0.21.11
 )
