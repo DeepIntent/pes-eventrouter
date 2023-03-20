@@ -1,4 +1,4 @@
 {
-"kubeconfig": "",
+"kubeconfig": "/home/m/.kube/config",
 "sink": "stdout"
 }
