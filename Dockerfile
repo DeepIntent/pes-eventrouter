@@ -1,12 +1,8 @@
-FROM alpine:3.13.5
+FROM ubuntu:22.04
 
-WORKDIR /app
-
-RUN apk update --no-cache \
-    && apk upgrade \
-    && apk add ca-certificates
+RUN apt update \
+    && apt upgrade -y
 
 COPY eventrouter /app/
-USER nobody:nobody
 
-CMD ["/bin/sh", "-c", "/app/eventrouter"]
+CMD ["/app/eventrouter"]
