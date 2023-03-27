@@ -1,8 +1,8 @@
-FROM ubuntu:22.04
+FROM debian:bullseye
 
-RUN apt update \
-    && apt upgrade -y
+RUN apt-get update \
+    && apt-get upgrade -y
 
-COPY eventrouter /app/
+COPY --from=build  /work/eventrouter /app/
 
 CMD ["/app/eventrouter"]

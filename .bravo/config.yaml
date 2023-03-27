@@ -11,7 +11,7 @@ pipeline:
       steps:
         - |
           go mod download
-          go build
+          go build .
 
     "Build Docker Image":
       imageBuild: &imageBuild
