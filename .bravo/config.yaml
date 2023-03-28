@@ -1,5 +1,5 @@
 pipeline:
-  image: platform/go:1.15
+  image: platform/golang:1.19.6.pes1
   stages:
     "Build Binary":
       cache:
@@ -11,14 +11,14 @@ pipeline:
       steps:
         - |
           go mod download
-          go build
+          go build .
 
     "Build Docker Image":
       imageBuild: &imageBuild
         push: false
         name: platform/eventrouter
         tags:
-          - 0.3.0.pes4
+          - 0.3.0.pes5
     
     "Deploy Docker Image":
       branch: master
