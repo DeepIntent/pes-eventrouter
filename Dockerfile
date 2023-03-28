@@ -3,6 +3,6 @@ FROM debian:bullseye
 RUN apt-get update \
     && apt-get upgrade -y
 
-COPY /work/eventrouter /app/
+COPY eventrouter /app/
 
 CMD ["/app/eventrouter"]
