@@ -1,3 +1,4 @@
+#
 pipeline:
   image: platform/golang:1.19.6.pes1
   stages:
