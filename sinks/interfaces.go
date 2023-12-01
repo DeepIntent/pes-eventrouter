@@ -58,26 +58,6 @@ func ManufactureSink() (e EventSinkInterface) {
 		h := NewHTTPSink(url, overflow, bufferSize)
 		go h.Run(make(chan bool))
 		return h
-	case "kafka":
-		viper.SetDefault("kafkaBrokers", []string{"kafka:9092"})
-		viper.SetDefault("kafkaTopic", "eventrouter")
-		viper.SetDefault("kafkaAsync", true)
-		viper.SetDefault("kafkaRetryMax", 5)
-		viper.SetDefault("kafkaSaslUser", "")
-		viper.SetDefault("kafkaSaslPwd", "")
-
-		brokers := viper.GetStringSlice("kafkaBrokers")
-		topic := viper.GetString("kafkaTopic")
-		async := viper.GetBool("kakfkaAsync")
-		retryMax := viper.GetInt("kafkaRetryMax")
-		saslUser := viper.GetString("kafkaSaslUser")
-		saslPwd := viper.GetString("kafkaSaslPwd")
-
-		e, err := NewKafkaSink(brokers, topic, async, retryMax, saslUser, saslPwd)
-		if err != nil {
-			panic(err.Error())
-		}
-		return e
 	case "s3sink":
 		accessKeyID := viper.GetString("s3SinkAccessKeyID")
 		if accessKeyID == "" {
