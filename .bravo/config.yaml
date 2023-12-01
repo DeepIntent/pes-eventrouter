@@ -1,4 +1,3 @@
-#
 pipeline:
   image: platform/golang:1.19.6.pes1
   stages:
@@ -19,7 +18,7 @@ pipeline:
         push: false
         name: platform/eventrouter
         tags:
-          - 0.3.0.pes5
+          - 1.0.0.pes1-1
     
     "Deploy Docker Image":
       branch: master
