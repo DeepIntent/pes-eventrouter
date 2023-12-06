@@ -1,7 +1,4 @@
-FROM debian:bullseye
-
-RUN apt-get update \
-    && apt-get upgrade -y
+FROM harbor.central.adm.didevops.com/platform/ubuntu:22.04.stable
 
 COPY eventrouter /app/
 
