@@ -1,5 +1,5 @@
 pipeline:
-  image: platform/golang:1.23.2.pes1
+  image: platform/golang:1.23.4.pes1
   stages:
     "Build Binary":
       cache:
@@ -18,7 +18,7 @@ pipeline:
         push: false
         name: platform/eventrouter
         tags:
-          - 1.0.1
+          - 1.0.2
         securityScan:
           failSeverity: CRITICAL
     
