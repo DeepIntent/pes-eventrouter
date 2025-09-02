@@ -4,7 +4,7 @@ pipeline:
     "Build Binary":
       cache:
         - path: /gopath
-          key: gopath-{{ checksum "go.sum" }}
+          key: "gopath-{{ checksum go.sum }}"
       env:
         GOPATH: /gopath
         CGO_ENABLED: 0
