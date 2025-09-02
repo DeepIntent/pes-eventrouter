@@ -1,6 +1,6 @@
 module github.com/heptiolabs/eventrouter
 
-go 1.24.0
+go 1.24.2
 
 require (
 	github.com/crewjam/rfc5424 v0.1.0
