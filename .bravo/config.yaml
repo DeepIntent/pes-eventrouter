@@ -1,9 +1,10 @@
 pipeline:
-  image: platform/golang:1.23.4.pes1
+  image: platform/golang:1.24.2.pes1
   stages:
     "Build Binary":
       cache:
         - path: /gopath
+          key: "gopath-{{ checksum go.sum }}"
       env:
         GOPATH: /gopath
         CGO_ENABLED: 0
@@ -18,7 +19,7 @@ pipeline:
         push: false
         name: platform/eventrouter
         tags:
-          - 1.0.2
+          - 1.0.3
         securityScan:
           failSeverity: CRITICAL
     

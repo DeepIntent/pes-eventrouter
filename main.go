@@ -49,7 +49,7 @@ func sigHandler() <-chan struct{} {
 			syscall.SIGSEGV, // FullDerp
 			syscall.SIGABRT, // Abnormal termination
 			syscall.SIGILL,  // illegal instruction
-			syscall.SIGFPE)  // floating point - this is why we can't have nice things
+			syscall.SIGFPE) // floating point - this is why we can't have nice things
 		sig := <-c
 		glog.Warningf("Signal (%v) Detected, Shutting Down", sig)
 		close(stop)
@@ -72,7 +72,8 @@ func loadConfig() kubernetes.Interface {
 	viper.AddConfigPath(".")
 	viper.SetDefault("kubeconfig", "")
 	viper.SetDefault("sink", "glog")
-	viper.SetDefault("resync-interval", time.Minute*30)
+	// disabling resync for now since we see duplicates in logs
+	viper.SetDefault("resync-interval", time.Second*0)
 	viper.SetDefault("enable-prometheus", true)
 	if err = viper.ReadInConfig(); err != nil {
 		panic(err.Error())
